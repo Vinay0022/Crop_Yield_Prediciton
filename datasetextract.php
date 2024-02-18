@@ -21,6 +21,7 @@ if($res mysqli_query(mysqli_connect('localhost', 'root',", ,'acrs'), "SELECT . f
          $soilmoisture =$soilmoisture/$count;
          $sunlightintensity= $sunlightintensity/$count;
     echo $temp;
+    
 }
  ?
 <! DOCTYPE html>
