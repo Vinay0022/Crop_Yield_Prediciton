@@ -49,7 +49,7 @@ if($res mysqli_query(mysqli_connect('localhost', 'root',", ,'acrs'), "SELECT . f
  <tbody>
   <tr><td> <h4 style="color: darkblue" ><b>TEMPERATURE:</b></h4><input required="" type="hidden" value="<?php
 
-     echo $temp ?>" name "temp"><?php echo $temp ?> Degree Celcius</h4></td</tr>
+     echo $temp ?>"  name "temp"><?php echo $temp ?> Degree Celcius</h4></td</tr>
 
      <tr><td> <h4 style="color: darkblue"><b>HUMIDITY:</b></h4> <input required="" type="hidden" value="<?php
      echo $humidity ?>"  name-"humidity"><?php echo $humidity ?> grams per cubic meter(g/m3)</h></td></tr>
