@@ -43,7 +43,7 @@ if($res mysqli_query(mysqli_connect('localhost', 'root',", ,'acrs'), "SELECT . f
 <div class-"container" ><hr>
 <center>
 <h4 align = "center" ><b><u>Prediction</u></b></h4>
-<form method= "POST" action="http://127.0.0.1:5000/">
+<form method= " POST" action="http://127.0.0.1:5000/">
 <div class="row">
 <table class="table table-bordered">
  <tbody>
