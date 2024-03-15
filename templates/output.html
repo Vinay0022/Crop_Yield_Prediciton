@@ -18,18 +18,20 @@ text-align: justify;
 <div class="container"><hr>
 <center>
 <h4><b><u>Prediction</u></b></h4>
+{% if output==2 %}
+<h2>Predicted Crop: Sugar Cane</h2>
+<hr><img src="https://img.freepik.com/premium-vector/sugarcane-vector-white-background_889056-46284.jpg">
+{% endif %}
 {%if output==1 %}
 <h2>Predicted Crop: Toor Dal</h2>
 <hr><img src="https://5.imimg.com/data5/GLADMIN/Default/2022/7/CA/YC/PY/92368/toor-dal-500x500.jpg">
 {% endif %}
-{% if output==2 %}
-Predicted Crop:Sugar Cane
-{% endif %}
+
 {% if output==3 %}
-Predicted Crop: Soya
+<h2>Predicted Crop: Soya</h2>
+<hr><img src="https://media.istockphoto.com/id/184878412/photo/soybean.jpg?s=612x612&w=0&k=20&c=y2ErWVIJEIZ2o_O2YGjfLHePuMLyRwf_5_felYaD-Qc=">
 {% endif %}
 </center>
 </div>
-    </body>
 </body>
 </html>

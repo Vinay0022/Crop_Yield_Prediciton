@@ -1,14 +1,17 @@
 #include <SPI.h>
 #include <MFRC522.h>
-#include <WiFi.h>
-const char* ssid = "";
-const char* password= "";
-char server[] = "192.168.43.0";
+#include <ESP8266WiFi.h>
+#include <DHT.h>
+#include <ESP8266HTTPClient.h>
+
+const char* ssid = "vivo";
+const char* password = "vivopoiu";
+char server[] ="192.168.136.86";
 WiFiClient client;
 
 #define DHTPIN D2
 #define DHTTYPE DHT11
-DHT dht(DHTPIN,DHTTPYE);
+DHT dht(DHTPIN,DHTTYPE);
 float humidityData;
 float temperatureData;
 float soilMoistureData;
@@ -19,7 +22,7 @@ void setup(){
 Serial.begin(115200);
 delay(100);
 Serial.print(ssid);
-Wifi.begin(ssid,password);
+WiFi.begin(ssid,password);
 while(WiFi.status() != WL_CONNECTED){
 delay(500);
 Serial.print(".");
@@ -48,12 +51,15 @@ void loop(){
     Serial.println(temperatureData);
     delay(1000);
 
-    rainData= Serial.read();
+    
+    rainData = digitalRead(D4);
     Serial.print("Rain Meter: ");
     Serial.println(rainData);
     delay(1000);
+    
 
-    soilMoistureData= Serial.read();
+
+    soilMoistureData = digitalRead(D3);
     Serial.print("Soil Moisture: ");
     Serial.println(soilMoistureData);
     delay(1000);
@@ -61,33 +67,27 @@ void loop(){
     LDRValue = digitalRead(D1);
     LDRValue = LDRValue * 5.0;
     Serial.print("LIGHT INTENSITY: ");
+     Serial.println(LDRValue);
     delay(1000);
 
 Sendint_To_phpmyadmindatabase();
 delay(3000);
 }
 
-void Sendint_To_phpmyadmindatabase()
-{
-if (client.connect(server, B1)){
-HTTPClient http;
-http.begin(""); //our link
-http.addHeader("Content-Type","application/x-www-form-urlencoded");
-String httpRequestData = "humidity=" + String(humidityData)+ "&temperature=" + String(temperatureData)+"&rain=" + String(rainData)+"&moisture" + String(soilMoistureData)+ "&intensity=" + String(LDRValue);
-Serial.print("httpRequestData: ");
-Serial.print(httpRequestData);
-int httpResponseCode = http.Post(httpRequestData);
-Serial.println(httpResponseCode);
-String payload = http.getString();
-Serial.println(payload);
-http.end();
+void Sendint_To_phpmyadmindatabase() {
+  if (client.connect(server, 80)) {
+    HTTPClient http;
+    http.begin(client, "http://192.168.136.86/Project/insert.php");
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    String httpRequestData = "humidity=" + String(humidityData) + "&temperature=" + String(temperatureData) + "&rain=" + String(rainData) + "&moisture=" + String(soilMoistureData) + "&intensity=" + String(LDRValue);
+    Serial.print("httpRequestData: ");
+    Serial.println(httpRequestData);
+    int httpResponseCode = http.POST(httpRequestData);
+    Serial.println(httpResponseCode);
+    String payload = http.getString();
+    Serial.println(payload);
+    http.end();
+  } else {
+    Serial.println("connection failed");
+  }
 }
-else
-{
-Serial.println("connection failed");
-    }
-
-    }
-
-
-
