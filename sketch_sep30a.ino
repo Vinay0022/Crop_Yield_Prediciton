@@ -4,9 +4,9 @@
 #include <DHT.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "vivo";
-const char* password = "vivopoiu";
-char server[] ="192.168.136.86";
+const char* ssid = "Ryt";
+const char* password = "15051970";
+char server[] ="192.168.0.104";
 WiFiClient client;
 
 #define DHTPIN D2
@@ -77,7 +77,7 @@ delay(3000);
 void Sendint_To_phpmyadmindatabase() {
   if (client.connect(server, 80)) {
     HTTPClient http;
-    http.begin(client, "http://192.168.136.86/Project/insert.php");
+    http.begin(client, "http://192.168.0.104/Project/insert.php");
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     String httpRequestData = "humidity=" + String(humidityData) + "&temperature=" + String(temperatureData) + "&rain=" + String(rainData) + "&moisture=" + String(soilMoistureData) + "&intensity=" + String(LDRValue);
     Serial.print("httpRequestData: ");

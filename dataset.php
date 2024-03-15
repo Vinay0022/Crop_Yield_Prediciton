@@ -26,12 +26,12 @@
                     <table class="table table-bordered">
                         <tbody>
                             <?php
-                            $temp = 1;
-                            $humidity = 1;
-                            $rain = 1;
-                            $soilmoisture = 1;
-                            $sunlightintensity = 1;
-                            $count = 1;
+                            $temp = 0;
+                            $humidity = 0;
+                            $rain = 0;
+                            $soilmoisture = 0;
+                            $sunlightintensity = 0;
+                            $count = 0;
 
                             $conn = mysqli_connect('localhost', 'root', '','acrs');
 
@@ -50,14 +50,15 @@
                                     $soilmoisture += $rw['SOILMOISTURE'];
                                     $sunlightintensity += $rw['SUNLIGHTINTENSITY'];
                                     $count++;
+                                
                                 }
-
+                            
                                 $temp = $temp / $count;
                                 $humidity = $humidity / $count;
                                 $rain = $rain / $count;
                                 $soilmoisture = $soilmoisture / $count;
                                 $sunlightintensity = $sunlightintensity / $count;
-                            } else {
+                            }else {
                                 echo "Error executing query: " . mysqli_error($conn);
                             }
 
