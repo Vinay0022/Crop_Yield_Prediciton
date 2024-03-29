@@ -1,15 +1,15 @@
 #include <SPI.h>
 #include <MFRC522.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <DHT.h>
-#include <ESP8266HTTPClient.h>
+#include <HTTPClient.h>
 
 const char* ssid = "Ryt";
 const char* password = "15051970";
 char server[] ="192.168.0.104";
 WiFiClient client;
 
-#define DHTPIN D2
+#define DHTPIN D18
 #define DHTTYPE DHT11
 DHT dht(DHTPIN,DHTTYPE);
 float humidityData;
@@ -52,19 +52,19 @@ void loop(){
     delay(1000);
 
     
-    rainData = digitalRead(D4);
+    rainData = digitalRead(D5);
     Serial.print("Rain Meter: ");
     Serial.println(rainData);
     delay(1000);
     
 
 
-    soilMoistureData = digitalRead(D3);
+    soilMoistureData = digitalRead(D21);
     Serial.print("Soil Moisture: ");
     Serial.println(soilMoistureData);
     delay(1000);
 
-    LDRValue = digitalRead(D1);
+    LDRValue = digitalRead(D19);
     LDRValue = LDRValue * 5.0;
     Serial.print("LIGHT INTENSITY: ");
      Serial.println(LDRValue);
