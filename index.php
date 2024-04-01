@@ -1,3 +1,12 @@
+<?php
+            // Check if the button is clicked
+            if (isset($_POST['submit'])) {
+                // Redirect to another PHP file
+                header('Location: dataset.php');
+                exit(); // Ensure that script execution stops after redirection
+            }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +20,11 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Bootstrap for developers -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/728d1d3dec.js" crossorigin="anonymous"></script>
@@ -19,9 +32,13 @@
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,47 +52,81 @@
                 <div class="title-support">using Machine Learning</div>
             </div>
             <div class="dev">
-                <div class="text-primary">
+
+                 <div class="text-primary">
                     <i class="far fa-file-code"></i>&nbsp;Developed by:
                 </div>
-                <ul class="developer">
-                    <li>Vaibhav Ambati</li>    
-                    <li>Vinay Bait</li>
-                    <li>Swayam Thanekar</li>
-                </ul>
+               
+                <div class="container py-3">
+                   
+
+                    <div class="row text-center ">
+                        <!-- Team item-->
+                        <div id="vaibhe-1" class="col-xl-3 rounded col-sm-6 mb-5 mr-5 ">
+                            <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100"
+                                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0">Vaibhav Vinod Ambati</h5><span
+                                    class="small text-uppercase text-muted">Roll no - 01</span>
+                            
+                            </div>
+                        </div>
+                        <!-- End-->
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5  mr-5">
+                            <div  id="vaibhe-1" class="bg-white rounded shadow-sm py-5 px-4"><img
+                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100"
+                                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0">Vinay Ravindra Bait</h5><span
+                                    class="small text-uppercase text-muted">Roll no - 02</span>
+                               
+                            </div>
+                        </div>
+                        <!-- End-->
+
+                        <!-- Team item-->
+                        <div class="col-xl-3 col-sm-6 mb-5 mr-5">
+                            <div id="vaibhe-1" class="bg-white rounded shadow-sm py-5 px-4"><img
+                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100"
+                                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0">Swayam Ruturaj Thanekar</h5><span
+                                    class="small text-uppercase text-muted">Roll no - 31</span>
+                              
+                            </div>
+                        </div>
+                        <!-- End-->
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
             </div>
 
-
-
-<?php
-    // Check if the button is clicked
-    if(isset($_POST['submit'])) {
-        // Redirect to another PHP file
-        header('Location: dataset.php');
-        exit(); // Ensure that script execution stops after redirection
-    }
-?>
-
-<form method="post" action="" >
-    <input style="
+            <form method="post" action="">
+                <input style="
     display: inline-block;
     text-decoration: none;
     color: white;
         sans-serif;
     font-weight: bold;
     padding: 0.6em 2em;
-    margin-right: 2em;
+    margin-left: 3rem;
+    
     font-size: 1.4em;
     border: none;
     border-radius: 40px;
     background-image: linear-gradient(to right, #1cd8d2, #93edc7);
     box-shadow: 4px 4px 10px #81ecec;
-    transition: 0.3s;
-cursor:pointer;
-"
-
-  type="submit" name="submit" value="Try it">
-</form>
+    transition: 0.25s;
+   cursor:pointer;
+   
+" type="submit" name="submit" value="Try it">
+            </form>
 
         </div>
         <div class="imgContainer">
@@ -90,77 +141,80 @@ cursor:pointer;
                 <img src="imgs/input.svg" alt="">
             </div>
             <div class="myCard-title text-blue">Enter details</div>
-            <div class="myCard-body ">Provide information for the crop like its type, the area of the farm, the soil category and the district in which it is to be grown</div>
+            <div class="myCard-body ">Provide information for the crop like its type, the area of the farm, the soil
+                category and the district in which it is to be grown</div>
         </div>
         <div class="card myCard">
             <div class="myCard-img">
                 <img src="imgs/weather.svg" alt="">
             </div>
             <div class="myCard-title text-green">Live Sensors Data Fetch</div>
-            <div class="myCard-body ">Current weather details like the temperature, humidity, rain , soil moisture , light intensity are fetched automatically from the sensors to be used for prediction</div>
+            <div class="myCard-body ">Current weather details like the temperature, humidity, rain , soil moisture ,
+                light intensity are fetched automatically from the sensors to be used for prediction</div>
         </div>
         <div class="card myCard">
             <div class="myCard-img">
                 <img src="imgs/model.svg" alt="">
             </div>
             <div class="myCard-title text-orange">Prediction</div>
-            <div class="myCard-body ">It uses Decision tree algorithm. This algorithm uses historical data to create the tree and then applies it to current conditions to estimate crop yields.</div>
+            <div class="myCard-body ">It uses Decision tree algorithm. This algorithm uses historical data to create the
+                tree and then applies it to current conditions to estimate crop yields.</div>
         </div>
     </div>
     </div>
 
     <script>
-        $(document).ready(()=>{
+        $(document).ready(() => {
             $('#submit').prop('disabled', true);
             $('#prediction').hide();
             var input_lists;
-            $.get('input_lists.txt', (data, status)=>{
+            $.get('input_lists.txt', (data, status) => {
                 input_lists = JSON.parse(data);
-            }).done(()=>{
+            }).done(() => {
                 let opts = '<option value="" selected hidden disabled>Select district</option>';
                 let dists = input_lists['districts'];
-                for(let i=0; i<dists.length; i++)
-                    opts += '<option value="'+dists[i]+'">'+dists[i]+'</option>';
+                for (let i = 0; i < dists.length; i++)
+                    opts += '<option value="' + dists[i] + '">' + dists[i] + '</option>';
                 $('#district').html(opts);
 
                 opts = '<option value="" selected hidden disabled>Select crop</option>';
                 let crops = input_lists['crops'];
-                for(let i=0; i<crops.length; i++)
-                    opts += '<option value="'+crops[i]+'">'+crops[i]+'</option>';
+                for (let i = 0; i < crops.length; i++)
+                    opts += '<option value="' + crops[i] + '">' + crops[i] + '</option>';
                 $('#crop').html(opts);
 
                 opts = '<option value="" selected hidden disabled>Select soil type</option>';
                 let soils = input_lists['soils'];
-                for(let i=0; i<soils.length; i++)
-                    opts += '<option value="'+soils[i]+'">'+soils[i]+'</option>';
+                for (let i = 0; i < soils.length; i++)
+                    opts += '<option value="' + soils[i] + '">' + soils[i] + '</option>';
                 $('#soil').html(opts);
-                
+
             });
         });
-        $('select').change(()=>{
+        $('select').change(() => {
             var flag = 0;
-            if(!$('#district').val()){ flag = 1; }
-            if(!$('#crop').val()){ flag = 1; }
-            if($('#area').val() == ""){ flag = 1; }
-            if(!$('#soil').val()){ flag = 1; }
+            if (!$('#district').val()) { flag = 1; }
+            if (!$('#crop').val()) { flag = 1; }
+            if ($('#area').val() == "") { flag = 1; }
+            if (!$('#soil').val()) { flag = 1; }
             $('#submit').prop('disabled', flag);
         })
-        $('input').keyup(()=>{
+        $('input').keyup(() => {
             var flag = 0;
-            if(!$('#district').val()){ flag = 1; }
-            if(!$('#crop').val()){ flag = 1; }
-            if($('#area').val() == ""){ flag = 1; }
-            if(!$('#soil').val()){ flag = 1; }
+            if (!$('#district').val()) { flag = 1; }
+            if (!$('#crop').val()) { flag = 1; }
+            if ($('#area').val() == "") { flag = 1; }
+            if (!$('#soil').val()) { flag = 1; }
             $('#submit').prop('disabled', flag);
         })
-        
-        $('#submit').click(()=>{
-            var paras = 'district='+$('#district').val()+ '&crop='+$('#crop').val() + '&area='+$('#area').val() + '&soil='+$('#soil').val();
+
+        $('#submit').click(() => {
+            var paras = 'district=' + $('#district').val() + '&crop=' + $('#crop').val() + '&area=' + $('#area').val() + '&soil=' + $('#soil').val();
             var res;
-            $.get('predict.php?'+paras, (data, status)=>{
+            $.get('predict.php?' + paras, (data, status) => {
                 // alert(data);
                 res = data;
-            }).done(()=>{
+            }).done(() => {
                 $('#prediction').html(res);
                 $('#prediction').show();
             });
