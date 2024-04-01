@@ -39,7 +39,7 @@
                                 die("Connection failed:  failed man " . mysqli_connect_error());
                             }
 
-                            $sql = "SELECT * FROM dataset ORDER BY REFID DESC LIMIT 10";
+                            $sql = "SELECT * FROM dataset ORDER BY REFID DESC LIMIT 1";
                             $res = mysqli_query($conn, $sql);
 
                             if ($res) {
