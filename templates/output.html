@@ -18,19 +18,20 @@ text-align: justify;
 <div class="container"><hr>
 <center>
 <h4><b><u>Prediction</u></b></h4>
+{% if output==3 %}
+<h2>Predicted Crop: Green Peas</h2>
+<hr><img src="https://www.carrydor.com/image/cache/catalog/Vegetables/Peas%20(Matar)%201%20Kg%202-550x550.jpg">
+{% endif %}
 {% if output==2 %}
-<h2>Predicted Crop: Sugar Cane</h2>
-<hr><img src="https://img.freepik.com/premium-vector/sugarcane-vector-white-background_889056-46284.jpg">
+<h2>Predicted Crop: Soyabean</h2>
+<hr><img src="https://5.imimg.com/data5/DA/BF/MY-18781513/soya-beans-500x500.jpg">
 {% endif %}
 {%if output==1 %}
-<h2>Predicted Crop: Toor Dal</h2>
-<hr><img src="https://5.imimg.com/data5/GLADMIN/Default/2022/7/CA/YC/PY/92368/toor-dal-500x500.jpg">
+<h2>Predicted Crop: Chickpea</h2>
+<hr><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHtf9ivxD23Bp_-VOY4H2tCRMC0_znhzyAEt2jfzvUlskEZcv0 ">
 {% endif %}
 
-{% if output==3 %}
-<h2>Predicted Crop: Soya</h2>
-<hr><img src="https://media.istockphoto.com/id/184878412/photo/soybean.jpg?s=612x612&w=0&k=20&c=y2ErWVIJEIZ2o_O2YGjfLHePuMLyRwf_5_felYaD-Qc=">
-{% endif %}
+
 </center>
 </div>
 </body>

@@ -86,10 +86,8 @@
                                     <h4 style="color: darkblue"><b>RAIN METER:</b></h4>
                                     <input required="" type="hidden" value="<?php echo $rain ?>" name="rain">
                                     <?php
-                                    if ($rain > 0.5 && $rain < 0.8) {
-                                        echo 'MODERATE RAINFALL';
-                                    } elseif ($rain > 0.8) {
-                                        echo 'HEAVY RAINFALL';
+                                    if ($rain < 3000) {
+                                        echo 'SUFFICIENT RAINFALL';
                                     } else {
                                         echo 'LOW RAINFALL';
                                     }
@@ -102,7 +100,7 @@
                                     <h4 style="color: darkblue"><b>SOIL MOISTURE:</b></h4>
                                     <input required="" type="hidden" value="<?php echo $soilmoisture ?>" name="soilmoisture">
                                     <?php
-                                    echo ($soilmoisture > 0.8) ? 'EFFICIENT MOISTURE' : 'LESS MOISTURE';
+                                    echo ($soilmoisture < 3000) ? 'SUFFICIENT MOISTURE' : 'LESS MOISTURE';
                                     ?>
                                 </td>
                             </tr>
@@ -112,12 +110,10 @@
                                     <h4 style="color: darkblue"><b>SUNLIGHT INTENSITY:</b></h4>
                                     <input required="" type="hidden" value="<?php echo $sunlightintensity ?>" name="sunlightintensity">
                                     <?php
-                                    if ($sunlightintensity > 0.5 && $sunlightintensity < 0.8) {
-                                        echo 'MODERATE';
-                                    } elseif ($sunlightintensity > 0.8) {
-                                        echo 'EFFICIENT';
+                                    if ($sunlightintensity < 10000) {
+                                        echo 'SUFFICIENT SUNLIGHT';
                                     } else {
-                                        echo 'LESS';
+                                        echo 'LOW SUNLIGHT';
                                     }
                                     ?>
                                 </td>

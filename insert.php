@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $temp = $_POST['temperature'];
 $humidity = $_POST['humidity'];
 $rainmeter = $_POST['rain'];
-$soilmoisture = $_POST['humidity'];
+$soilmoisture = $_POST['moisture'];
 $sunlightintensity = $_POST['intensity'];
 
 // Insert data into the dataset table
